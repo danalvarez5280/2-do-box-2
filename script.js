@@ -40,7 +40,7 @@ function enableSaveButton13()  {
       $('.save-btn').prop('disabled', true)
   } else {$('.save-btn').prop('disabled', false)
   prepend(idea);
-  chopChop();
+  sliceTodos();
   clearInputFields();
   sendToStorage(idea);
   disableSaveButton();
@@ -82,7 +82,7 @@ function deleteThis(){
   var id = $(this).parent().prop('id');
   localStorage.removeItem(id);
   $(this).parent().remove();
-  chopChop();
+  sliceTodos();
 };
 
 function getAllFromLocalStorage(){
@@ -121,12 +121,12 @@ function hideCompleted() {
   $('.task-click').hide();
 }
 
-function chopChop() {
+function sliceTodos() {
   $('.idea-card').slice(10).hide();
 }
 
-function chippityChop() {
-  $('.idea-card').slice(0).show();
+function sliceAll() {
+  $('.idea-card').slice(10).show();
 }
 
 function filterBtns(){
@@ -159,7 +159,7 @@ $(document).ready(function() {
   newArray.forEach(function(value){
     prepend(value)
   })
-  chopChop();
+  sliceTodos();
   hideCompleted();
 });
 
@@ -174,7 +174,7 @@ $('.save-btn').on('click', function()  {
   var task = $('.input-task').val();
   var idea = new Idea(title, task);
   prepend(idea);
-  chopChop();
+  sliceTodos();
   clearInputFields();
   sendToStorage(idea);
   disableSaveButton();
@@ -224,7 +224,7 @@ $('.card-container').on('click', '.completed', function(){
   sendToStorage(grabCard);
 });
 
-$('.show-Mo').on('click', chippityChop);
+$('.show-Mo').on('click', sliceAll);
 
 $('.all-btn').on('click', showAll);
 

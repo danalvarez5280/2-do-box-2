@@ -133,7 +133,7 @@ button:active{
 }
 
 .save-btn:disabled{
-  background: #00a79d;
+  background: #A9BCD0;
 }
 
 /************************************
@@ -217,6 +217,7 @@ main{
 .task-click {
   resize: none;
   color: red;
+  opacity: .5;
   text-decoration: line-through;
   border: none;
 }
@@ -227,12 +228,13 @@ main{
 }
 
 .completed {
+  background-color: #00a79d;
+  border: 2px solid #A9BCD0;
+  color: #FFFFFA;
   float: right;
   display: inline;
   font-family: 'Roboto Slab', serif;
   font-size: 12px;
-  background: inherit;
-  border: none;
 }
 
 .arrow-up{
